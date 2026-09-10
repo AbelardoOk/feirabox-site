@@ -42,9 +42,9 @@ export function SiteHeader({ logoSrc }: { logoSrc: string }) {
             <Image
               src={logoSrc}
               alt="FeiraBox - Mercado & Ofício: feira livre por assinatura em Campo Grande MS"
-              width={180}
+              width={40}
               height={40}
-              className="h-10 w-auto object-contain"
+              className="h-10 w-10 object-contain"
               priority
             />
           </a>

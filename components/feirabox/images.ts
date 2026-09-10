@@ -1,8 +1,6 @@
 export const IMAGES = {
-  logoHeader:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuCxSMqCq2PfU1WzhNlEDRF316ClkZ7ElK2exRL0P5Uhxlctd9CHylWGKUj_tTpM-YcPk02Z3bzLJTvr8vu4KBIP9oXBmrBFSWZFDx0WJTn4GhcqUWuAAS4S6CJ2VYmh1u3nWISqrvUIZPQmwfvEoqQ5_za_tvFXR6wgteYqsiK8Kct3dcwoaKeFtXHJ3Az1--5mzk1Kpyxp3jCd3enXjKEtviIfoV-Lpp7oTiaQQP3c-B-EkRzAbh0y4M_XFIcD9uUD65HO5agaQ79T2g",
-  logoFooter:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuAqUTIkULuAj5tHFzGyV5CG-BZ0XZyyrmneuGzf86D4vtPx5f2epsnvho1OlthhUOnoXRDACeKrRxy0TLrm3BS42gmsG2k34jUV3G4n6UUGsEcfIECtUpPC4LYpxDQ-tSyTOiPabyP_sqLfWznI741EM9jlgY2vO1APgN5dXrW-msdSYvUxqnEVH9TE9Cpn807nMjztYPXJG0InmIuI9PcT59w0DDSUkVM9r7k1tovdyd7u6RAkfs6NhaUm9kNlzWTrEYR-YEhAibPlfQ",
+  logoHeader: "/icon.png",
+  logoFooter: "/icon.png",
   heroBox:
     "https://lh3.googleusercontent.com/aida/AEtjO1Xe6hgjTPDJsCJXB_j2MF7HZ-N9GxXMko_XM43llUYmXWwqCpnDQNKp6gQf8hP2IKtovLLppmGK64qJQ6JCaw-qzjqetT8LxonBcbNNhOxVkRX2lADKVfwOwAbg4fQ41r8p3lC04ElidMdvbpQXrewzymertCHcLpsBa39iEUuYiZ8VskuKon8epWWl8vm6NKcoxOm7EfwE0W8_rk2nYt4ve62HQ1UIPVDIdYFY9ZREBrWg3jkOo8oVMw",
   boxDocuras:

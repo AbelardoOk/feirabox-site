@@ -12,9 +12,9 @@ export function SiteFooter() {
               <Image
                 src={IMAGES.logoFooter}
                 alt="FeiraBox — Mercado e Ofício: agricultura familiar de Mato Grosso do Sul"
-                width={160}
+                width={36}
                 height={36}
-                className="h-9 w-auto object-contain"
+                className="h-9 w-9 object-contain"
                 loading="lazy"
               />
               <span className="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase font-bold tracking-wider">
