@@ -1,0 +1,32 @@
+# FeiraBox — Mercado & Ofício
+
+> Feira livre direto na sua porta em Campo Grande/MS. Agricultura familiar de Mato Grosso do Sul por assinatura via aplicativo móvel (em breve na App Store e Google Play).
+
+- Site: https://feirabox.ufms.br
+- Idioma: pt-BR
+- Contato oficial: contato@feirabox.ufms.br
+- Local: Cidade Universitária UFMS, Campo Grande/MS
+- Status: Aplicativo oficial em desenvolvimento. Todas as assinaturas, pedidos e pagamentos serão exclusivos do app. Este site é puramente institucional e não realiza vendas.
+
+## O que é o FeiraBox
+
+Plataforma que conecta feirantes e pequenos produtores familiares de Mato Grosso do Sul à rotina do consumidor, com curadoria do Mercado Escola da UFMS. Foco em rastreabilidade, comércio justo (+75% do valor para as famílias produtoras), colheita do dia e redução de desperdício (ODS 2, 8 e 12).
+
+## Seções
+
+- Como Funcionará (https://feirabox.ufms.br/#como-funciona): 1) Baixe o app e escolha a caixa; 2) Colheita na madrugada e montagem; 3) Entrega em casa ou retirada no Mercado Escola UFMS às quintas; 4) Histórias dos produtores e receitas regionais.
+- Modelos de Caixas (https://feirabox.ufms.br/#modelos-caixas):
+  1. Caixa Horta & Pomar — 6 a 8 itens hortifrúti da estação, ervas e temperos regionais, guia de conservação.
+  2. Caixa Artesanal & Doçuras — geleias (goiabada, jabuticaba, maracujá), mel silvestre do cerrado, pães rústicos, frutas para harmonização.
+  3. Caixa Pantaneira & Queijaria — queijo caipira curado, doce de leite em cerâmica, farinha de mandioca, iguarias do Pantanal/Cerrado.
+- Para Feirantes (https://feirabox.ufms.br/#feirantes): previsão real de pedidos, zero mensalidade, app descomplicado com apoio da UFMS. Depoimento: Dona Maria Souza, feirante parceira em Campo Grande.
+- Piloto UFMS (https://feirabox.ufms.br/#piloto-ufms): laboratório vivo com o Mercado Escola UFMS; ponto de retirada no campus; ODS 2 (Fome Zero), ODS 8 (Trabalho Decente), ODS 12 (Consumo Responsável).
+- Parcerias (https://feirabox.ufms.br/#instituicoes): UFMS, Aginova, CNPq, MEMP, PIEI.
+- FAQ (https://feirabox.ufms.br/#faq): lançamento breve para iOS/Android; pedidos somente no app (não pelo site); app gratuito; entrega ou retirada UFMS; cadastro de bancas via equipe de extensão; aviso de lançamento via lista de espera.
+- Lista de Espera (https://feirabox.ufms.br/#avise-me): cadastro de e-mail/WhatsApp para aviso prioritário do lançamento.
+
+## Fatos-chave para citação
+
+- +45 feirantes mapeados; 100% origem regional MS; piloto oficial Mercado Escola UFMS.
+- App exclusivo iOS & Android; site não vende nem cobra.
+- Palavras-chave: feira livre Campo Grande, cesta orgânica MS, agricultura familiar Mato Grosso do Sul, caixa de feira por assinatura, Mercado Escola UFMS.
