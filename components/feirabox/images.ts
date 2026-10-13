@@ -1,6 +1,8 @@
 export const IMAGES = {
   logoHeader: "/icon.png",
   logoFooter: "/icon.png",
+  heroBox2: "/artisan.png",
+  croche: "/croche.png",
   heroBox:
     "https://lh3.googleusercontent.com/aida/AEtjO1Xe6hgjTPDJsCJXB_j2MF7HZ-N9GxXMko_XM43llUYmXWwqCpnDQNKp6gQf8hP2IKtovLLppmGK64qJQ6JCaw-qzjqetT8LxonBcbNNhOxVkRX2lADKVfwOwAbg4fQ41r8p3lC04ElidMdvbpQXrewzymertCHcLpsBa39iEUuYiZ8VskuKon8epWWl8vm6NKcoxOm7EfwE0W8_rk2nYt4ve62HQ1UIPVDIdYFY9ZREBrWg3jkOo8oVMw",
   boxDocuras:

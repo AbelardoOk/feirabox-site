@@ -23,12 +23,6 @@ const PARTNERS = [
     fillClass: "fill-tertiary",
     path: "M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z",
   },
-  {
-    name: "PIEI",
-    iconClass: "text-secondary",
-    fillClass: "fill-secondary",
-    path: "M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z",
-  },
 ];
 
 export function Partners() {
@@ -46,7 +40,7 @@ export function Partners() {
             Quem faz esse projeto acontecer
           </h2>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6 w-full max-w-[1100px] items-stretch">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6 w-full max-w-[1100px] items-stretch">
           {PARTNERS.map((partner) => (
             <div
               key={partner.name}

@@ -16,12 +16,12 @@ export function BoxShowcase() {
               Vitrine Ilustrativa do App
             </span>
             <h2 id="caixas-titulo" className="font-headline-lg text-headline-lg text-primary">
-              Modelos de caixas que estarão disponíveis no aplicativo
+              Exemplos de modelos de caixas que estarão disponíveis no aplicativo
             </h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant">
-              Conheça as seleções que estão sendo estruturadas com a curadoria
-              agroecológica do Mercado Escola da UFMS. A contratação e
-              personalização estarão disponíveis unicamente no app.
+              Todos os produtos vendidos no app seguem o estilo de caixa surpresa.
+              Cada caixa possui produtos selecionados e montados pelo feirante, produzindo
+              uma experiência de descobrimento para cada compra.
             </p>
           </div>
           <div className="flex items-center gap-2 bg-surface-container px-3.5 py-2 rounded-full self-start md:self-auto border border-outline-variant/30">
@@ -43,7 +43,7 @@ export function BoxShowcase() {
                 <Image
                   alt="Caixa Horta e Pomar FeiraBox com hortaliças frescas da estação e queijo caipira de Campo Grande MS"
                   className="w-full h-full object-cover"
-                  src={IMAGES.heroBox}
+                  src={IMAGES.croche}
                   width={800}
                   height={520}
                   loading="lazy"
@@ -58,18 +58,18 @@ export function BoxShowcase() {
               </div>
               <div className="flex flex-col gap-1">
                 <h3 className="font-headline-sm text-headline-sm text-primary">
-                  Caixa Horta &amp; Pomar
+                  Caixa Artesanato
                 </h3>
                 <p className="font-body-md text-body-md text-on-surface-variant">
-                  Vitalidade e frescor vegetal com folhas colhidas na madrugada
-                  por produtores de Campo Grande.
+                  Criatividade e cultura, produtos feitos a mão por artesões regionais.
+                  Melhores itens de decoração e criatividade.
                 </p>
               </div>
               <div className="flex flex-col gap-2 py-3 border-y border-outline-variant/30">
                 {[
-                  "6 a 8 itens hortifrúti frescos da estação",
-                  "Ervas finas, temperos regionais e folhagens",
-                  "Sugestões de receitas e guia de conservação",
+                  "Chaveiros e bonecos de crochê",
+                  "Pequenos itens de decoração",
+                  "Regionalismo, criatividade e cultura",
                 ].map((item) => (
                   <div
                     key={item}
@@ -133,6 +133,13 @@ export function BoxShowcase() {
                 </p>
               </div>
               <div className="flex flex-col gap-2 py-3 border-y border-outline-variant/30">
+
+                <div
+                    className="flex items-center gap-2 font-body-md text-body-md text-on-surface"
+                  >
+                    <span>Contém:</span>
+                  </div>
+
                 {[
                   "Geleias caseiras (Goiabada, Jabuticaba, Maracujá)",
                   "Pote de mel puro de abelhas nativas do cerrado",
@@ -199,11 +206,18 @@ export function BoxShowcase() {
                   Caixa Pantaneira &amp; Queijaria
                 </h3>
                 <p className="font-body-md text-body-md text-on-surface-variant">
-                  Tradição queijeira caipira de leite cru, doce de leite cozido
+                  Tradição de queijo caipira, doce de leite cozido
                   à lenha e delícias das fazendas sul-mato-grossenses.
                 </p>
               </div>
               <div className="flex flex-col gap-2 py-3 border-y border-outline-variant/30">
+
+                <div
+                    className="flex items-center gap-2 font-body-md text-body-md text-on-surface"
+                  >
+                    <span>Contém:</span>
+                  </div>
+
                 {[
                   "Queijo caipira curado artesanal de corte",
                   "Doce de leite tradicional em cerâmica rústica",

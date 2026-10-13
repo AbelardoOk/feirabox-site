@@ -69,7 +69,7 @@ export function SiteHeader({ logoSrc }: { logoSrc: string }) {
             <span>App em Breve</span>
           </div>
           <a
-            className="h-touch-target-min inline-flex items-center justify-center px-5 rounded-2xl bg-secondary text-on-secondary font-label-lg text-label-lg shadow-sm hover:bg-secondary/90 transition-all active:scale-[0.98] gap-2 shrink-0"
+            className="h-touch-target-min inline-flex items-center justify-center px-5 rounded-2xl bg-secondary text-on-secondary font-label-lg text-label-lg shadow-sm hover:bg-secondary/90 transition-all active:scale-[0.8] gap-2 shrink-0"
             href="#avise-me"
           >
             <MaterialIcon name="notifications_active" className="text-[18px]" />
