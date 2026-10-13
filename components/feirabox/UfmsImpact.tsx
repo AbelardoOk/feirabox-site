@@ -38,10 +38,10 @@ export function UfmsImpact() {
                 Inovação social e extensão comunitária no Mercado Escola
               </h2>
               <p className="font-body-lg text-body-lg text-on-surface-variant">
-                O FeiraBox é um laboratório vivo desenvolvido em parceria
-                acadêmica com o Mercado Escola da UFMS para fomentar a
+                O FeiraBox é um projeto desenvolvido em parceria
+                acadêmica com a UFMS para fomentar a
                 segurança alimentar, o comércio justo e o desenvolvimento
-                sustentável de Campo Grande.
+                sustentável.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">

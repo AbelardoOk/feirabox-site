@@ -5,23 +5,23 @@ const STEPS = [
     number: "01",
     title: "Baixe o App & Escolha sua Caixa",
     description:
-      "Navegue pelas caixas sazonais da semana (Horta, Doçuras ou Queijaria) e personalize sua frequência.",
+      "Navegue pelas caixas sazonais da semana (Artesanato, Doçuras ou Queijaria) e personalize sua frequência.",
     icon: "phone_iphone",
     tag: "100% no app",
   },
   {
     number: "02",
-    title: "Colheita & Montagem Afetuosa",
+    title: "Preparação & Montagem Afetuosa",
     description:
-      "Os feirantes cadastrados colhem os itens na madrugada e preparam os pacotes artesanais com respeito à terra.",
+      "Os feirantes cadastrados preparam as caixas artesanais com respeito.",
     icon: "eco",
     tag: "Direto do produtor",
   },
   {
     number: "03",
-    title: "Entrega ou Ponto UFMS",
+    title: "Entrega ou Ponto",
     description:
-      "Acompanhe pelo app o status da entrega na sua casa ou selecione retirada sustentável no Mercado Escola UFMS.",
+      "Acompanhe pelo app o status da entrega na sua casa ou selecione retirada sustentável na feira.",
     icon: "pin_drop",
     tag: "Rastreio no celular",
   },
@@ -29,7 +29,7 @@ const STEPS = [
     number: "04",
     title: "Histórias & Receitas Regionais",
     description:
-      "No aplicativo, descubra a biografia da família agricultora que produziu sua caixa e acesse receitas típicas sul-mato-grossenses.",
+      "Receba produtos artesanais e feitos com humanidade de quem vive da feira.",
     icon: "auto_stories",
     tag: "Conteúdo exclusivo",
   },

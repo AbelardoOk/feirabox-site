@@ -8,14 +8,14 @@ const BENEFITS = [
     iconClass: "text-secondary",
     title: "Previsão Real",
     description:
-      "Colha sob demanda sabendo exatamente os pedidos já confirmados no app.",
+      "Prepare sob demanda com os pedidos já confirmados no app.",
   },
   {
     icon: "savings",
     iconClass: "text-primary",
     title: "Zero Mensalidade",
     description:
-      "Modelo cooperativo sem tarifas abusivas para o agricultor parceiro.",
+      "Modelo cooperativo sem tarifas abusivas para o feirante parceiro.",
   },
   {
     icon: "smartphone",
@@ -40,10 +40,10 @@ export function ForProducers() {
                 Para a Sua Banca Crescer
               </span>
               <h2 id="feirantes-titulo" className="font-headline-lg text-headline-lg text-primary">
-                Previsibilidade de vendas para quem cultiva com amor
+                Previsibilidade de vendas para quem produz com amor
               </h2>
               <p className="font-body-lg text-body-lg text-on-surface-variant">
-                Estamos cadastrando e capacitando feirantes do MS para
+                Vamos cadastrar feirantes do MS para
                 utilizarem o FeiraBox assim que o aplicativo entrar em
                 operação.
               </p>
@@ -71,7 +71,7 @@ export function ForProducers() {
               <p className="italic font-body-md text-body-md text-on-surface">
                 &ldquo;Participar da concepção do FeiraBox com a universidade
                 nos dá a segurança de que o aplicativo foi pensado de verdade
-                para quem está no sol colhendo a verdura todo dia.&rdquo;
+                para quem está no sol vendendo todo dia.&rdquo;
               </p>
               <span className="font-label-md text-label-md text-secondary font-bold">
                 — Dona Maria Souza, Feirante parceira no projeto piloto de
@@ -100,23 +100,7 @@ export function ForProducers() {
                 sizes="(max-width: 1024px) 100vw, 40vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-surface-container-lowest/90 backdrop-blur-md">
-                <div className="flex items-center gap-3">
-                  <MaterialIcon
-                    name="handshake"
-                    className="text-primary text-[28px]"
-                  />
-                  <div className="flex flex-col">
-                    <span className="font-label-lg text-label-lg text-primary font-bold">
-                      Apoio Técnico Universitário
-                    </span>
-                    <span className="font-body-md text-body-md text-on-surface-variant">
-                      Capacitação em boas práticas e inclusão digital via
-                      Mercado Escola UFMS.
-                    </span>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>

@@ -76,8 +76,8 @@ export function HeroSection() {
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
             Conectando feirantes e pequenos produtores familiares de Mato
             Grosso do Sul à sua rotina. Uma plataforma moderna que nasce junto
-            ao Mercado Escola da UFMS para valorizar quem planta e levar
-            colheita fresca até a sua mesa.
+            ao Mercado Escola da UFMS para valorizar quem produz e levar
+            produtos artesanais até a sua mesa.
           </p>
 
           <div className="w-full p-4 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex items-start gap-3">
@@ -137,7 +137,7 @@ export function HeroSection() {
             <Image
               alt="Caixa rústica FeiraBox com hortifrúti orgânicos, queijo artesanal pantaneiro e mel silvestre em Campo Grande MS"
               className="w-full h-[420px] lg:h-[500px] object-cover"
-              src={IMAGES.heroBox}
+              src={IMAGES.heroBox2}
               width={1024}
               height={1000}
               priority
@@ -149,13 +149,6 @@ export function HeroSection() {
               <MaterialIcon name="verified" className="text-[16px]" />
               <span>Origem 100% Pantanal &amp; MS</span>
             </div>
-            <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-bold shadow-md flex items-center gap-1.5">
-              <MaterialIcon
-                name="install_mobile"
-                className="text-[16px] text-secondary"
-              />
-              <span>Em Breve no App</span>
-            </div>
             <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_8px_24px_rgba(107,112,92,0.15)] flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center shrink-0 text-secondary">
@@ -166,7 +159,7 @@ export function HeroSection() {
                     Visualização do Piloto
                   </span>
                   <span className="font-title-lg text-title-lg text-primary leading-tight">
-                    Hortaliças frescas, queijos pantaneiros e compotas
+                    Geleias, queijos pantaneiros e compotas
                   </span>
                 </div>
               </div>

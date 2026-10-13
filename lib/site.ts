@@ -63,15 +63,14 @@ export const FAQ_DATA = [
       "Sim, o download do app FeiraBox será 100% gratuito tanto na App Store quanto na Google Play Store. Você paga exclusivamente pelos produtos e caixas agroecológicas que escolher assinar.",
   },
   {
-    question:
-      "Como funcionará a entrega ou retirada no Mercado Escola UFMS?",
+    question: "Como funcionará a entrega ou retirada das caixas?",
     answer:
-      "Você poderá escolher entre receber as caixas com comodidade no seu endereço residencial ou optar pela retirada sustentável diretamente no ponto de apoio do Mercado Escola no campus da UFMS, com condições e horários diferenciados.",
+      "Cada feirante define como prefere entregar: você pode retirar sua caixa em um ponto de retirada indicado por ele ou receber em casa, com entrega feita pelo próprio feirante. As opções, os horários e as condições aparecem no perfil de cada banca antes de você assinar.",
   },
   {
     question: "Sou feirante do MS: como cadastrar minha banca no app?",
     answer:
-      "A equipe de extensão universitária da UFMS oferece capacitação gratuita e acompanhamento técnico para feirantes e agricultores parceiros. Basta entrar em contato pela seção de feirantes para iniciar a validação da sua produção.",
+      "É simples e acessível: o cadastro é feito direto pelo celular, sem mensalidade de adesão. Se tiver qualquer dúvida, nossa equipe de suporte oferece toda a ajuda necessária, desde o primeiro acesso até o cadastro dos seus produtos. Basta entrar em contato.",
   },
   {
     question: "Como serei avisado do lançamento oficial nas lojas?",

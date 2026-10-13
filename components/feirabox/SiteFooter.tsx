@@ -24,7 +24,7 @@ export function SiteFooter() {
             <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-sm">
               Conectando a riqueza da terra sul-mato-grossense à mesa da
               comunidade acadêmica e urbana. Projeto de extensão em parceria
-              com o Mercado Escola UFMS.
+              com a UFMS.
             </p>
             <div className="mt-space-xs flex items-center gap-2 p-3 rounded-xl bg-surface-container text-secondary font-label-sm text-label-sm border border-outline-variant/30">
               <MaterialIcon name="verified" className="text-[20px] shrink-0" />
@@ -74,7 +74,7 @@ export function SiteFooter() {
               className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
               href="#feirantes"
             >
-              Vantagens do Circuito
+              Vantagens do Aplicativo
             </a>
             <a
               className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
@@ -113,16 +113,9 @@ export function SiteFooter() {
         <div className="pt-space-md border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="font-label-sm text-label-sm text-on-surface-variant text-center md:text-left leading-relaxed max-w-2xl">
             © 2025 FeiraBox • Mercado &amp; Ofício. Todos os direitos
-            reservados. Projeto de Inovação Social e Comunitária UFMS.
-            Plataforma puramente institucional — Assinaturas exclusivas no
+            reservados. Projeto de Empreendedorismo e Inovação da UFMS. Assinaturas exclusivas no
             aplicativo móvel.
           </p>
-          <div className="flex items-center gap-2 shrink-0">
-            <MaterialIcon name="eco" className="text-secondary text-[16px]" />
-            <span className="font-label-sm text-label-sm text-on-surface-variant">
-              Feito com terra, respeito e tecnologia em Mato Grosso do Sul
-            </span>
-          </div>
         </div>
       </div>
     </footer>
