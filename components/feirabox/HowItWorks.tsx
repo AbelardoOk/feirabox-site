@@ -72,7 +72,7 @@ export function HowItWorks() {
           {STEPS.map((step) => (
             <div
               key={step.number}
-              className="p-6 rounded-3xl bg-surface-container flex flex-col items-center text-center gap-4 shadow-sm hover:shadow-md transition-shadow relative"
+              className="p-7 rounded-3xl bg-surface-container flex flex-col items-center text-center gap-5 shadow-sm hover:shadow-md transition-shadow relative"
             >
               <div className="w-12 h-12 rounded-2xl bg-surface-container-lowest text-primary flex items-center justify-center font-bold text-headline-sm shadow-sm">
                 {step.number}
@@ -93,7 +93,7 @@ export function HowItWorks() {
             </div>
           ))}
         </div>
-        <p className="text-center text-xs text-on-surface-variant/80">
+        <p className="text-center font-body-md text-body-md text-on-surface-variant">
           Telas ilustrativas — o visual final do app pode mudar até o lançamento.
         </p>
       </div>

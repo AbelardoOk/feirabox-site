@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { MaterialIcon } from "./MaterialIcon";
 import { FAQ_DATA } from "@/lib/site";
 
@@ -50,7 +53,13 @@ function FaqAnswer({ index }: { index: number }) {
   );
 }
 
+/**
+ * FAQ em acordeão acessível (Fase 4): cada pergunta é um <button> nativo
+ * (teclado + leitor de tela) com aria-expanded/aria-controls e região associada.
+ */
 export function Faq() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
   return (
     <section
       aria-labelledby="faq-titulo"
@@ -67,7 +76,7 @@ export function Faq() {
             className="font-headline-lg lg:font-display-lg text-headline-lg lg:text-display-lg text-primary tracking-tight leading-tight"
           >
             Perguntas frequentes sobre o{" "}
-            <span className="italic text-secondary">futuro app</span>
+            <span className="italic text-secondary">quando lançarmos</span>
           </h2>
           <p className="font-body-lg text-body-lg text-on-surface-variant">
             Entenda como o FeiraBox está sendo estruturado para conectar você
@@ -81,44 +90,62 @@ export function Faq() {
           itemType="https://schema.org/FAQPage"
           className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[1100px] mx-auto w-full items-start"
         >
-          {FAQ_DATA.map((item, index) => (
-            <div
-              key={item.question}
-              itemScope
-              itemProp="mainEntity"
-              itemType="https://schema.org/Question"
-              className="p-6 rounded-2xl bg-surface-container border border-outline-variant/30 shadow-[0_2px_8px_rgba(107,112,92,0.06)] flex flex-col gap-3 transition-all hover:shadow-md"
-            >
-              <div className="flex items-start gap-3">
-                <span
-                  aria-hidden="true"
-                  className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 mt-0.5 ${FAQ_STYLE[index].iconWrap}`}
+          {FAQ_DATA.map((item, index) => {
+            const style = FAQ_STYLE[index % FAQ_STYLE.length];
+            const isOpen = openIndex === index;
+            const buttonId = `faq-pergunta-${index}`;
+            const panelId = `faq-resposta-${index}`;
+            return (
+              <div
+                key={item.question}
+                itemScope
+                itemProp="mainEntity"
+                itemType="https://schema.org/Question"
+                className="rounded-2xl bg-surface-container border border-outline-variant/30 shadow-[0_2px_8px_rgba(107,112,92,0.06)] transition-all hover:shadow-md"
+              >
+                <h3 itemProp="name" className="m-0">
+                  <button
+                    type="button"
+                    id={buttonId}
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                    onClick={() => setOpenIndex(isOpen ? null : index)}
+                    className="flex min-h-[44px] w-full items-start gap-3 rounded-2xl p-6 text-left"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${style.iconWrap}`}
+                    >
+                      <MaterialIcon name={style.icon} className="text-[20px]" />
+                    </span>
+                    <span className="flex-1 font-title-lg text-title-lg text-primary font-bold">
+                      {item.question}
+                    </span>
+                    <span aria-hidden="true" className="shrink-0">
+                      <MaterialIcon
+                        name="expand_more"
+                        className={`text-[24px] text-secondary transition-transform ${isOpen ? "rotate-180" : ""}`}
+                      />
+                    </span>
+                  </button>
+                </h3>
+                <div
+                  id={panelId}
+                  role="region"
+                  aria-labelledby={buttonId}
+                  itemScope
+                  itemProp="acceptedAnswer"
+                  itemType="https://schema.org/Answer"
+                  hidden={!isOpen}
+                  className="px-6 pb-6 pl-[4.25rem]"
                 >
-                  <MaterialIcon
-                    name={FAQ_STYLE[index].icon}
-                    className="text-[20px]"
-                  />
-                </span>
-                <div className="flex flex-col gap-1">
-                  <h3
-                    itemProp="name"
-                    className="font-title-lg text-title-lg text-primary font-bold"
-                  >
-                    {item.question}
-                  </h3>
-                  <div
-                    itemScope
-                    itemProp="acceptedAnswer"
-                    itemType="https://schema.org/Answer"
-                  >
-                    <div itemProp="text">
-                      <FaqAnswer index={index} />
-                    </div>
+                  <div itemProp="text">
+                    <FaqAnswer index={index} />
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

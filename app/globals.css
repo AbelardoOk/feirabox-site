@@ -26,7 +26,7 @@
   --color-secondary: #8e4e14;
   --color-on-secondary: #ffffff;
   --color-secondary-container: #fca867;
-  --color-on-secondary-container: #763b00;
+  --color-on-secondary-container: #6e3600;
   --color-tertiary: #631200;
   --color-on-tertiary: #ffffff;
   --color-tertiary-container: #84270f;
@@ -49,6 +49,9 @@
   --color-on-tertiary-fixed-variant: #83260e;
   --color-background: #fff8f2;
   --color-on-background: #1e1b17;
+
+  /* Terracota suave — alternância de fundos de seção (Fase 4) */
+  --color-clay-soft: #f7e4d3;
 
   /* Espaçamentos */
   --spacing-space-2xs: 0.25rem;
@@ -111,8 +114,9 @@
   --text-body-lg--line-height: 24px;
   --text-body-lg--font-weight: 400;
 
-  --text-body-md: 14px;
-  --text-body-md--line-height: 20px;
+  /* Texto corrido mínimo 16px (Fase 4) — body-md era 14px */
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
   --text-body-md--font-weight: 400;
 
   --text-label-lg: 14px;
@@ -133,6 +137,26 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Foco visível em todos os interativos (Fase 4) */
+:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* Respeito a prefers-reduced-motion (Fase 4) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 body {

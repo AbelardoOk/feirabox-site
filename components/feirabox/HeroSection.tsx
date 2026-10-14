@@ -21,7 +21,7 @@ function ComingSoonBadges() {
           <span className="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">
             Em breve na
           </span>
-          <span className="text-sm font-bold text-primary">App Store</span>
+          <span className="font-body-md text-body-md font-bold text-primary">App Store</span>
         </div>
       </div>
       <div className="flex items-center gap-3 rounded-2xl border border-outline-variant/40 bg-surface-container-lowest px-5 py-3 shadow-sm">
@@ -30,7 +30,7 @@ function ComingSoonBadges() {
           <span className="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">
             Em breve no
           </span>
-          <span className="text-sm font-bold text-primary">Google Play</span>
+          <span className="font-body-md text-body-md font-bold text-primary">Google Play</span>
         </div>
       </div>
     </div>
@@ -77,7 +77,7 @@ export function HeroSection() {
             <SecondaryCtaLink />
           </div>
 
-          <p className="flex items-start gap-2 text-sm text-on-surface-variant">
+          <p className="flex items-start gap-2 font-body-md text-body-md text-on-surface-variant">
             <MaterialIcon name="info" className="mt-0.5 shrink-0 text-[20px] text-secondary" />
             <span>Pedidos e assinaturas só no app, quando lançarmos.</span>
           </p>
@@ -139,7 +139,7 @@ export function HeroSection() {
               alt="Prévia ilustrativa do app FeiraBox: início e caixas da semana"
               priority
             />
-            <p className="max-w-[220px] text-left text-sm text-on-surface-variant">
+            <p className="max-w-[220px] text-left font-body-md text-body-md text-on-surface-variant">
               Prévia do app — telas ilustrativas, o visual final pode mudar até
               o lançamento.
             </p>

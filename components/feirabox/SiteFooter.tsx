@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { IMAGES } from "./images";
 import { MaterialIcon } from "./MaterialIcon";
 
@@ -34,7 +35,7 @@ export function SiteFooter() {
               </span>
             </div>
             {/* Microlinks movidos do hero (Fase 1): confiança, sem ação */}
-            <ul aria-label="Compromissos FeiraBox" className="flex flex-col gap-1.5 pt-1 text-sm text-on-surface-variant">
+            <ul aria-label="Compromissos FeiraBox" className="flex flex-col gap-1.5 pt-1 font-body-md text-body-md text-on-surface-variant">
               <li className="inline-flex items-center gap-1.5">
                 <MaterialIcon name="verified" className="text-[18px] text-primary" />
                 <span>Iniciativa com o Mercado Escola UFMS</span>
@@ -53,25 +54,25 @@ export function SiteFooter() {
             <span className="font-title-lg text-title-lg text-primary mb-1 font-bold">
               O Aplicativo
             </span>
-            <a
-              className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
-              href="#modelos-caixas"
+            <Link
+              className="inline-flex min-h-[44px] items-center font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
+              href="/#modelos-caixas"
             >
               Modelos de Caixas
-            </a>
-            <a
-              className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
-              href="#como-funciona"
+            </Link>
+            <Link
+              className="inline-flex min-h-[44px] items-center font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
+              href="/#como-funciona"
             >
               Como Funcionará
-            </a>
-            <a
-              className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
-              href="#avise-me"
+            </Link>
+            <Link
+              className="inline-flex min-h-[44px] items-center font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
+              href="/#avise-me"
             >
               Entrar na lista de espera
-            </a>
-            <span className="text-xs text-on-surface-variant/70 italic mt-2">
+            </Link>
+            <span className="font-body-md text-body-md text-on-surface-variant italic mt-2">
               Em breve na App Store e Play Store
             </span>
           </div>
@@ -79,47 +80,47 @@ export function SiteFooter() {
             <span className="font-title-lg text-title-lg text-primary mb-1 font-bold">
               Feirantes &amp; Banqueiros
             </span>
-            <a
-              className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
-              href="#feirantes"
+            <Link
+              className="inline-flex min-h-[44px] items-center font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
+              href="/feirantes"
             >
-              Como Integrar sua Banca
-            </a>
-            <a
-              className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
-              href="#feirantes"
+              Cadastrar minha banca
+            </Link>
+            <Link
+              className="inline-flex min-h-[44px] items-center font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
+              href="/#depoimentos"
             >
-              Vantagens do Aplicativo
-            </a>
-            <a
-              className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
-              href="#feirantes"
+              Depoimentos de feirantes
+            </Link>
+            <Link
+              className="inline-flex min-h-[44px] items-center font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
+              href="/#piloto-ufms"
             >
               Apoio Agroecológico
-            </a>
+            </Link>
           </div>
           <div className="lg:col-span-3 flex flex-col gap-2">
             <span className="font-title-lg text-title-lg text-primary mb-1 font-bold">
               Institucional &amp; Impacto
             </span>
-            <a
-              className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
-              href="#piloto-ufms"
+            <Link
+              className="inline-flex min-h-[44px] items-center font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
+              href="/#piloto-ufms"
             >
               Mercado Escola UFMS
-            </a>
-            <a
-              className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
-              href="#piloto-ufms"
+            </Link>
+            <Link
+              className="inline-flex min-h-[44px] items-center font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
+              href="/#piloto-ufms"
             >
               ODS 2, 8 e 12
-            </a>
+            </Link>
             <div className="mt-3 pt-2 border-t border-outline-variant/30 text-on-surface-variant font-body-md text-body-md flex flex-col gap-0.5">
               <span className="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">
                 Contato Oficial • Campo Grande / MS
               </span>
-              <span className="text-sm">Cidade Universitária UFMS</span>
-              <span className="text-sm text-primary font-medium">
+              <span className="font-body-md text-body-md">Cidade Universitária UFMS</span>
+              <span className="font-body-md text-body-md text-primary font-medium">
                 contato@feirabox.ufms.br
               </span>
             </div>

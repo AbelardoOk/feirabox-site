@@ -1,7 +1,178 @@
 import Image from "next/image";
+import Link from "next/link";
 import { CONSUMER_CTA } from "./ctas";
 import { IMAGES } from "./images";
 import { MaterialIcon } from "./MaterialIcon";
+
+/**
+ * Detalhes comerciais da caixa — Fase 3.
+ * Sem dados reais: todos exibem "Valores divulgados no lançamento".
+ */
+/* TODO: dados reais — preço, porções, frequência e área de entrega de cada caixa */
+const PENDING_VALUE = "Valores divulgados no lançamento";
+
+type Box = {
+  category: string;
+  categoryClass: string;
+  title: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  contents: string[];
+  checkClass: string;
+  availabilityLabel: string;
+  availabilityText: string;
+  availabilityClass: string;
+  featured?: boolean;
+};
+
+const BOXES: Box[] = [
+  {
+    category: "Hortifrúti do Dia",
+    categoryClass: "bg-primary-fixed text-on-primary-fixed",
+    title: "Caixa Artesanato",
+    description:
+      "Cultura e criatividade em peças feitas à mão por artesãos regionais.",
+    image: IMAGES.croche,
+    imageAlt: "Caixa Artesanato FeiraBox com chaveiros de crochê e itens de decoração feitos à mão em Campo Grande MS",
+    contents: [
+      "Chaveiros e bonecos de crochê",
+      "Pequenos itens de decoração",
+      "Regionalismo, criatividade e cultura",
+    ],
+    checkClass: "text-primary",
+    availabilityLabel: "Disponibilidade",
+    availabilityText: "Disponível para assinatura no lançamento do App",
+    availabilityClass: "bg-surface-container-low",
+  },
+  {
+    category: "Doçuras da Estação",
+    categoryClass: "bg-secondary-container text-on-secondary-container",
+    title: "Caixa Artesanal & Doçuras",
+    description:
+      "O legado doce de MS: geleias de frutas nativas, mel silvestre de florada pantaneira e compotas artesanais.",
+    image: IMAGES.boxDocuras,
+    imageAlt: "Caixa Artesanal e Doçuras FeiraBox com geleias de frutas nativas, mel silvestre e doces típicos de MS",
+    contents: [
+      "Geleias caseiras (Goiabada, Jabuticaba, Maracujá)",
+      "Pote de mel puro de abelhas nativas do cerrado",
+      "Pães rústicos artesanais de fermentação natural",
+      "Frutas selecionadas para harmonização",
+    ],
+    checkClass: "text-secondary",
+    availabilityLabel: "Edição Especial",
+    availabilityText: "Pedidos periódicos unicamente pelo celular",
+    availabilityClass: "bg-secondary-fixed/40",
+    featured: true,
+  },
+  {
+    category: "Queijaria & Tradição",
+    categoryClass: "bg-tertiary-fixed text-on-tertiary-fixed-variant",
+    title: "Caixa Pantaneira & Queijaria",
+    description:
+      "Tradição de queijo caipira, doce de leite cozido à lenha e delícias das fazendas sul-mato-grossenses.",
+    image: IMAGES.boxQueijaria,
+    imageAlt: "Caixa Pantaneira e Queijaria FeiraBox com queijo caipira curado e doce de leite em cerâmica rústica",
+    contents: [
+      "Queijo caipira curado artesanal de corte",
+      "Doce de leite tradicional em cerâmica rústica",
+      "Farinha de mandioca torrada de alambique",
+      "Iguarias típicas do Pantanal e Cerrado",
+    ],
+    checkClass: "text-primary",
+    availabilityLabel: "Tradição Pantaneira",
+    availabilityText: "Lotes limitados com reserva no App",
+    availabilityClass: "bg-surface-container-low",
+  },
+];
+
+const DETAIL_ROWS = [
+  { icon: "payments", label: "Preço" },
+  { icon: "group", label: "Serve" },
+  { icon: "calendar_month", label: "Frequência" },
+  { icon: "local_shipping", label: "Entrega" },
+] as const;
+
+function BoxCard({ box }: { box: Box }) {
+  return (
+    <div
+      className={`p-7 rounded-3xl bg-surface-container-lowest shadow-[0_4px_16px_rgba(107,112,92,0.08)] flex flex-col gap-6 hover:shadow-[0_8px_24px_rgba(107,112,92,0.12)] transition-all border border-outline-variant/20 ${
+        box.featured ? "ring-2 ring-secondary/30" : ""
+      }`}
+    >
+      <div className="flex flex-col gap-4">
+        <div className="relative w-full h-52 rounded-2xl overflow-hidden bg-surface-container">
+          <Image
+            alt={box.imageAlt}
+            className="w-full h-full object-cover"
+            src={box.image}
+            width={800}
+            height={520}
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+          <div className={`absolute top-3 left-3 px-3 py-1 rounded-full font-label-sm text-label-sm font-bold shadow-sm ${box.categoryClass}`}>
+            {box.category}
+          </div>
+          <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface-variant font-label-sm text-label-sm">
+            Imagem ilustrativa
+          </div>
+        </div>
+        <div className="flex flex-col gap-1">
+          <h3 className="font-headline-sm text-headline-sm text-primary">
+            {box.title}
+          </h3>
+          <p className="font-body-md text-body-md text-on-surface-variant">
+            {box.description}
+          </p>
+        </div>
+        <ul className="flex flex-col gap-2 py-3 border-y border-outline-variant/30">
+          {box.contents.map((item) => (
+            <li
+              key={item}
+              className="flex items-center gap-2 font-body-md text-body-md text-on-surface"
+            >
+              <MaterialIcon name="check" className={`${box.checkClass} text-[18px]`} />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+        {/* Preço, porções, frequência e área — sem dados: frase padrão */}
+        <dl className="grid grid-cols-1 gap-2 rounded-2xl bg-surface-container-low p-4 sm:grid-cols-2">
+          {DETAIL_ROWS.map((row) => (
+            <div key={row.label} className="flex items-start gap-2">
+              <MaterialIcon name={row.icon} className="mt-0.5 shrink-0 text-[18px] text-secondary" />
+              <div className="flex flex-col">
+                <dt className="font-label-sm text-label-sm font-bold uppercase tracking-wider text-primary">
+                  {row.label}
+                </dt>
+                <dd className="font-body-md text-body-md text-on-surface-variant">{PENDING_VALUE}</dd>
+              </div>
+            </div>
+          ))}
+        </dl>
+      </div>
+      {/* mt-auto iguala a altura dos cards: CTA sempre na base */}
+      <div className="mt-auto flex flex-col gap-3 pt-2">
+        <div className={`p-3 rounded-xl text-center flex flex-col gap-0.5 ${box.availabilityClass}`}>
+          <span className="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">
+            {box.availabilityLabel}
+          </span>
+          <span className="font-body-md text-body-md text-on-surface">
+            {box.availabilityText}
+          </span>
+        </div>
+        <Link
+          className="min-h-[44px] w-full rounded-2xl bg-surface-container hover:bg-surface-container-high text-primary font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all"
+          href={CONSUMER_CTA.href}
+        >
+          <MaterialIcon name="mark_email_read" className="text-[18px]" />
+          <span>{CONSUMER_CTA.label}</span>
+        </Link>
+      </div>
+    </div>
+  );
+}
 
 export function BoxShowcase() {
   return (
@@ -37,226 +208,13 @@ export function BoxShowcase() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop items-stretch">
-          {/* Card 1 */}
-          <div className="p-6 rounded-3xl bg-surface-container-lowest shadow-[0_4px_16px_rgba(107,112,92,0.08)] flex flex-col justify-between gap-6 hover:shadow-[0_8px_24px_rgba(107,112,92,0.12)] transition-all border border-outline-variant/20">
-            <div className="flex flex-col gap-4">
-              <div className="relative w-full h-52 rounded-2xl overflow-hidden bg-surface-container">
-                <Image
-                  alt="Caixa Horta e Pomar FeiraBox com hortaliças frescas da estação e queijo caipira de Campo Grande MS"
-                  className="w-full h-full object-cover"
-                  src={IMAGES.croche}
-                  width={800}
-                  height={520}
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold shadow-sm">
-                  Hortifrúti do Dia
-                </div>
-                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-bold">
-                  Exclusivo no App
-                </div>
-              </div>
-              <div className="flex flex-col gap-1">
-                <h3 className="font-headline-sm text-headline-sm text-primary">
-                  Caixa Artesanato
-                </h3>
-                <p className="font-body-md text-body-md text-on-surface-variant">
-                  Criatividade e cultura, produtos feitos a mão por artesões regionais.
-                  Melhores itens de decoração e criatividade.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2 py-3 border-y border-outline-variant/30">
-                {[
-                  "Chaveiros e bonecos de crochê",
-                  "Pequenos itens de decoração",
-                  "Regionalismo, criatividade e cultura",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-center gap-2 font-body-md text-body-md text-on-surface"
-                  >
-                    <MaterialIcon
-                      name="check"
-                      className="text-primary text-[18px]"
-                    />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="flex flex-col gap-3 pt-2">
-              <div className="p-3 rounded-xl bg-surface-container-low text-center flex flex-col gap-0.5">
-                <span className="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">
-                  Disponibilidade
-                </span>
-                <span className="font-body-md text-body-md text-on-surface">
-                  Disponível para assinatura no lançamento do App
-                </span>
-              </div>
-              <a
-                className="h-touch-target-min w-full rounded-2xl bg-surface-container hover:bg-surface-container-high text-primary font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all"
-                href={CONSUMER_CTA.href}
-              >
-                <MaterialIcon name="mark_email_read" className="text-[18px]" />
-                <span>Entrar na lista de espera</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Card 2 */}
-          <div className="p-6 rounded-3xl bg-surface-container-lowest shadow-[0_8px_24px_rgba(107,112,92,0.12)] flex flex-col justify-between gap-6 relative ring-2 ring-secondary/30 scale-[1.02] border border-outline-variant/20">
-            <div className="flex flex-col gap-4">
-              <div className="relative w-full h-52 rounded-2xl overflow-hidden bg-surface-container">
-                <Image
-                  alt="Caixa Artesanal e Doçuras FeiraBox com geleias de frutas nativas, mel silvestre e doces típicos de MS"
-                  className="w-full h-full object-cover"
-                  src={IMAGES.boxDocuras}
-                  width={800}
-                  height={520}
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold shadow-sm">
-                  Doçuras da Estação
-                </div>
-                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-secondary font-label-sm text-label-sm font-bold">
-                  Exclusivo no App
-                </div>
-              </div>
-              <div className="flex flex-col gap-1">
-                <h3 className="font-headline-sm text-headline-sm text-primary">
-                  Caixa Artesanal &amp; Doçuras
-                </h3>
-                <p className="font-body-md text-body-md text-on-surface-variant">
-                  O legado doce de MS: geleias de frutas nativas, mel silvestre
-                  de florada pantaneira e compotas artesanais.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2 py-3 border-y border-outline-variant/30">
-
-                <div
-                    className="flex items-center gap-2 font-body-md text-body-md text-on-surface"
-                  >
-                    <span>Contém:</span>
-                  </div>
-
-                {[
-                  "Geleias caseiras (Goiabada, Jabuticaba, Maracujá)",
-                  "Pote de mel puro de abelhas nativas do cerrado",
-                  "Pães rústicos artesanais de fermentação natural",
-                  "Frutas selecionadas para harmonização",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-center gap-2 font-body-md text-body-md text-on-surface"
-                  >
-                    <MaterialIcon
-                      name="check"
-                      className="text-secondary text-[18px]"
-                    />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="flex flex-col gap-3 pt-2">
-              <div className="p-3 rounded-xl bg-secondary-fixed/40 text-center flex flex-col gap-0.5">
-                <span className="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">
-                  Edição Especial
-                </span>
-                <span className="font-body-md text-body-md text-on-surface">
-                  Pedidos periódicos unicamente pelo celular
-                </span>
-              </div>
-              <a
-                className="h-touch-target-min w-full rounded-2xl bg-secondary hover:bg-secondary/90 text-on-secondary font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
-                href={CONSUMER_CTA.href}
-              >
-                <MaterialIcon
-                  name="mark_email_read"
-                  className="text-[18px]"
-                />
-                <span>Entrar na lista de espera</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Card 3 */}
-          <div className="p-6 rounded-3xl bg-surface-container-lowest shadow-[0_4px_16px_rgba(107,112,92,0.08)] flex flex-col justify-between gap-6 hover:shadow-[0_8px_24px_rgba(107,112,92,0.12)] transition-all border border-outline-variant/20">
-            <div className="flex flex-col gap-4">
-              <div className="relative w-full h-52 rounded-2xl overflow-hidden bg-surface-container">
-                <Image
-                  alt="Caixa Pantaneira e Queijaria FeiraBox com queijo caipira curado e doce de leite em cerâmica rústica"
-                  className="w-full h-full object-cover"
-                  src={IMAGES.boxQueijaria}
-                  width={800}
-                  height={520}
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-bold shadow-sm">
-                  Queijaria &amp; Tradição
-                </div>
-                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-tertiary font-label-sm text-label-sm font-bold">
-                  Exclusivo no App
-                </div>
-              </div>
-              <div className="flex flex-col gap-1">
-                <h3 className="font-headline-sm text-headline-sm text-primary">
-                  Caixa Pantaneira &amp; Queijaria
-                </h3>
-                <p className="font-body-md text-body-md text-on-surface-variant">
-                  Tradição de queijo caipira, doce de leite cozido
-                  à lenha e delícias das fazendas sul-mato-grossenses.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2 py-3 border-y border-outline-variant/30">
-
-                <div
-                    className="flex items-center gap-2 font-body-md text-body-md text-on-surface"
-                  >
-                    <span>Contém:</span>
-                  </div>
-
-                {[
-                  "Queijo caipira curado artesanal de corte",
-                  "Doce de leite tradicional em cerâmica rústica",
-                  "Farinha de mandioca torrada de alambique",
-                  "Iguarias típicas do Pantanal e Cerrado",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-center gap-2 font-body-md text-body-md text-on-surface"
-                  >
-                    <MaterialIcon
-                      name="check"
-                      className="text-primary text-[18px]"
-                    />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="flex flex-col gap-3 pt-2">
-              <div className="p-3 rounded-xl bg-surface-container-low text-center flex flex-col gap-0.5">
-                <span className="font-label-sm text-label-sm text-tertiary font-bold uppercase tracking-wider">
-                  Tradição Pantaneira
-                </span>
-                <span className="font-body-md text-body-md text-on-surface">
-                  Lotes limitados com reserva no App
-                </span>
-              </div>
-              <a
-                className="h-touch-target-min w-full rounded-2xl bg-surface-container hover:bg-surface-container-high text-primary font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all"
-                href={CONSUMER_CTA.href}
-              >
-                <MaterialIcon name="mark_email_read" className="text-[18px]" />
-                <span>Entrar na lista de espera</span>
-              </a>
-            </div>
-          </div>
+          {BOXES.map((box) => (
+            <BoxCard key={box.title} box={box} />
+          ))}
         </div>
+        <p className="text-center font-body-md text-body-md text-on-surface-variant">
+          Fotos ilustrativas — o conteúdo de cada caixa varia com a estação e a banca.
+        </p>
       </div>
     </section>
   );

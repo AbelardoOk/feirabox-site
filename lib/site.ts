@@ -38,11 +38,23 @@ export const SITE = {
     { id: "como-funciona", name: "Como Funcionará" },
     { id: "modelos-caixas", name: "Modelos de Caixas" },
     { id: "feirantes", name: "Para Feirantes" },
+    { id: "depoimentos", name: "Depoimentos" },
     { id: "piloto-ufms", name: "Piloto UFMS" },
     { id: "instituicoes", name: "Parcerias Institucionais" },
     { id: "faq", name: "Dúvidas Frequentes" },
     { id: "avise-me", name: "Lista de Espera" },
   ],
+} as const;
+
+/**
+ * Métricas da faixa de números — Fase 3.
+ * Edite aqui quando tiver os números reais (mantido "+45 feirantes mapeados" como pedido).
+ */
+/* TODO: dado real — atualizar números quando houver dados oficiais do piloto */
+export const METRICS = {
+  mappedFarmers: "+45",
+  mappedFarmersLabel: "Feirantes Mapeados",
+  mappedFarmersDescription: "Prontos para integrar o aplicativo",
 } as const;
 
 export const FAQ_DATA = [
@@ -70,12 +82,37 @@ export const FAQ_DATA = [
   {
     question: "Sou feirante do MS: como cadastrar minha banca no app?",
     answer:
-      "É simples e acessível: o cadastro é feito direto pelo celular, sem mensalidade de adesão. Se tiver qualquer dúvida, nossa equipe de suporte oferece toda a ajuda necessária, desde o primeiro acesso até o cadastro dos seus produtos. Basta entrar em contato.",
+      "É simples e acessível: acesse a página Para Feirantes (/feirantes) e envie seu contato. O cadastro é feito direto pelo celular, sem mensalidade de adesão, com ajuda da nossa equipe de suporte do primeiro acesso ao cadastro dos produtos.",
   },
   {
     question: "Como serei avisado do lançamento oficial nas lojas?",
     answer:
       "Basta preencher seu e-mail ou WhatsApp no formulário de lista de espera. Assim que as versões para Android e iOS forem publicadas, você receberá um link direto para ser um dos primeiros assinantes.",
+  },
+  {
+    question: "Quanto vão custar as caixas?",
+    answer:
+      "Valores divulgados no lançamento. Quando lançarmos, cada banca publica o preço da sua caixa direto no app, sem taxa escondida.",
+  },
+  {
+    question: "Qual será a área de entrega?",
+    answer:
+      "Quando lançarmos, começamos por Campo Grande/MS, com opção de retirada no Mercado Escola da UFMS. A área exata de entrega de cada banca aparece no perfil dela no app.",
+  },
+  {
+    question: "Como vou pagar pelos pedidos?",
+    answer:
+      "Quando lançarmos, todos os pagamentos acontecem dentro do app, com confirmação na hora. Os meios de pagamento aceitos serão divulgados no lançamento.",
+  },
+  {
+    question: "Sou feirante: como cadastro minha banca?",
+    answer:
+      "Acesse a página Para Feirantes e envie seu contato: nossa equipe chama você para o cadastro piloto, sem mensalidade de adesão.",
+  },
+  {
+    question: "E se meu produto chegar com problema?",
+    answer:
+      "Quando lançarmos, você fala direto com a banca pelo app e nossa equipe acompanha até resolver. Nenhum caso fica sem resposta.",
   },
 ] as const;
 
@@ -127,9 +164,9 @@ export function faqJsonLd() {
 export function productListJsonLd() {
   const boxes = [
     {
-      name: "Caixa Horta & Pomar",
+      name: "Caixa Artesanato",
       description:
-        "6 a 8 itens hortifrúti frescos da estação, ervas finas e temperos regionais de Campo Grande.",
+        "Produtos feitos à mão por artesãos regionais: crochê, decoração e cultura sul-mato-grossense.",
     },
     {
       name: "Caixa Artesanal & Doçuras",

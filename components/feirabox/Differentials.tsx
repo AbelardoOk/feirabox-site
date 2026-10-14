@@ -8,7 +8,7 @@ const CARDS = [
     badgeClass: "text-primary",
     title: "Conexão com a Origem & Histórias Reais",
     description:
-      "Saiba exatamente quem produziu o que está na sua mesa; cada caixa carrega a identidade, o afeto e a tradição dos pequenos produtores das feiras.",
+      "Saiba quem produziu o que está na sua mesa: cada caixa carrega a identidade e o afeto dos pequenos produtores.",
     footerIcon: "verified",
     footerClass: "text-primary",
     footer: "Biografias e relatos dos produtores no app",
@@ -20,7 +20,7 @@ const CARDS = [
     badgeClass: "text-secondary",
     title: "Sabor Artesanal & Direto do Produtor",
     description:
-      "Esqueça os produtos industrializados de prateleira. Geleias, queijos e artesanato chegam até você feitos em pequenos lotes, com receita de família e o cuidado de quem produz.",
+      "Geleias, queijos e artesanato em pequenos lotes, com receita de família — direto do produtor.",
     footerIcon: "eco",
     footerClass: "text-secondary",
     footer: "Da Feira direto para sua casa",
@@ -31,8 +31,9 @@ const CARDS = [
     badge: "Comércio Justo",
     badgeClass: "text-tertiary",
     title: "Apoio Direto à Economia Local",
+    // TODO: dado real — validar o percentual de repasse com a equipe do piloto
     description:
-      "Mais de 75% do valor volta diretamente para as mãos das famílias produtoras, fortalecendo a agricultura familiar e os feirantes parceiros de Campo Grande.",
+      "Mais de 75% do valor volta para as famílias produtoras de Campo Grande.",
     footerIcon: "payments",
     footerClass: "text-tertiary",
     footer: "Renda digna e previsibilidade para o produtor e artesão",
@@ -44,7 +45,7 @@ const CARDS = [
     badgeClass: "text-primary",
     title: "A Descoberta da Feira no Seu Ritmo",
     description:
-      "Receba curadoria sazonal, receitas regionais e novidades da estação sem sair de casa — com a praticidade de gerenciar tudo pelo celular.",
+      "Curadoria sazonal e receitas regionais sem sair de casa, com tudo gerenciado pelo celular.",
     footerIcon: "touch_app",
     footerClass: "text-primary",
     footer: "Gestão de assinatura em poucos toques no app",
@@ -53,7 +54,7 @@ const CARDS = [
 
 export function Differentials() {
   return (
-    <section aria-labelledby="diferenciais-titulo" className="w-full py-space-3xl px-margin-mobile lg:px-margin-desktop bg-surface-container-low">
+    <section aria-labelledby="diferenciais-titulo" className="w-full py-space-3xl px-margin-mobile lg:px-margin-desktop bg-background">
       <div className="max-w-[1280px] mx-auto flex flex-col gap-space-2xl">
         <div className="flex flex-col items-center text-center gap-space-xs max-w-xl mx-auto">
           <span className="px-3 py-1 rounded-full bg-surface-container text-primary font-label-md text-label-md uppercase font-bold tracking-wider">

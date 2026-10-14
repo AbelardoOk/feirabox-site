@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { FARMER_CTA } from "./ctas";
 import { MaterialIcon } from "./MaterialIcon";
 
@@ -68,7 +69,7 @@ export function WaitlistCta() {
         ) : (
           <form className="w-full max-w-md flex flex-col sm:flex-row gap-3" onSubmit={handleSubmit}>
             <input
-              className="h-touch-target-min flex-1 px-4 rounded-2xl bg-surface text-on-surface font-body-lg text-body-lg placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-secondary"
+              className="h-touch-target-min flex-1 px-4 rounded-2xl bg-surface text-on-surface font-body-lg text-body-lg placeholder:text-on-surface-variant focus:outline-none focus:ring-2 focus:ring-secondary"
               placeholder="Seu melhor e-mail ou WhatsApp"
               required
               type="text"
@@ -84,16 +85,16 @@ export function WaitlistCta() {
             </button>
           </form>
         )}
-        <p className="text-surface/70 text-xs max-w-md text-center">
+        <p className="text-surface/80 font-body-md text-body-md max-w-md text-center">
           * Não realizamos vendas ou cobranças por este site. Todas as compras e assinaturas serão ativadas com
           segurança diretamente no aplicativo.
         </p>
         <div className="flex min-h-[44px] flex-wrap items-center justify-center gap-2 text-surface/80 font-label-md text-label-md pt-2">
           <span>É feirante ou pequeno produtor de MS?</span>
-          <a className="text-secondary-fixed hover:underline font-bold inline-flex min-h-[44px] items-center gap-1 px-1" href={FARMER_CTA.href}>
+          <Link className="text-secondary-fixed hover:underline font-bold inline-flex min-h-[44px] items-center gap-1 px-1" href={FARMER_CTA.href}>
             <span>{FARMER_CTA.label}</span>
             <MaterialIcon name="arrow_forward" className="text-[16px]" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

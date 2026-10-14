@@ -24,7 +24,7 @@ const ODS = [
 export function UfmsImpact() {
   return (
     <section
-      className="w-full py-space-3xl px-margin-mobile lg:px-margin-desktop bg-background"
+      className="w-full py-space-3xl px-margin-mobile lg:px-margin-desktop bg-surface"
       aria-labelledby="piloto-titulo" id="piloto-ufms"
     >
       <div className="max-w-[1280px] mx-auto flex flex-col gap-space-2xl">

@@ -9,6 +9,7 @@ import { ImpactStats } from "@/components/feirabox/ImpactStats";
 import { Partners } from "@/components/feirabox/Partners";
 import { SiteFooter } from "@/components/feirabox/SiteFooter";
 import { StickyMobileCta } from "@/components/feirabox/StickyMobileCta";
+import { Testimonials } from "@/components/feirabox/Testimonials";
 import { UfmsImpact } from "@/components/feirabox/UfmsImpact";
 import { WaitlistCta } from "@/components/feirabox/WaitlistCta";
 import { IMAGES } from "@/components/feirabox/images";
@@ -32,6 +33,7 @@ export default function Home() {
           <HowItWorks />
           <BoxShowcase />
           <ForProducers />
+          <Testimonials />
           <Differentials />
           <UfmsImpact />
           <Partners />
