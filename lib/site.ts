@@ -92,7 +92,7 @@ export const FAQ_DATA = [
   {
     question: "Quanto vão custar as caixas?",
     answer:
-      "Valores divulgados no lançamento. Quando lançarmos, cada banca publica o preço da sua caixa direto no app, sem taxa escondida.",
+      "A estimativa atual é de R$ 44,90 a R$ 74,90 por caixa, com confirmação no lançamento. Quando lançarmos, cada banca publica o preço final da sua caixa direto no app, sem taxa escondida.",
   },
   {
     question: "Qual será a área de entrega?",
@@ -161,6 +161,14 @@ export function faqJsonLd() {
   };
 }
 
+/* TODO: preços ESTIMADOS (placeholders autorizados, faixa R$ 40–80) — confirmar os valores
+   reais de cada caixa no lançamento e atualizar aqui + nos cards da vitrine. */
+export const BOX_PRICES = {
+  "Caixa Artesanato": "44.90",
+  "Caixa Artesanal & Doçuras": "59.90",
+  "Caixa Pantaneira & Queijaria": "74.90",
+} as const;
+
 export function productListJsonLd() {
   const boxes = [
     {
@@ -168,8 +176,7 @@ export function productListJsonLd() {
       description:
         "Produtos feitos à mão por artesãos regionais: crochê, decoração e cultura sul-mato-grossense.",
       image: `${SITE.url}/croche.webp`,
-    },
-    {
+    },    {
       name: "Caixa Artesanal & Doçuras",
       description:
         "Geleias de frutas nativas, mel silvestre do cerrado e pães rústicos de fermentação natural.",
@@ -199,13 +206,11 @@ export function productListJsonLd() {
         image: box.image,
         brand: { "@type": "Brand", name: SITE.shortName },
         areaServed: "Campo Grande, Mato Grosso do Sul",
-        // App ainda não lançado: oferta em pré-venda, sem preço (não inventar valores).
-        // TODO: dado real — adicionar `price` (e `availability: InStock`) quando os valores
-        // forem divulgados no lançamento; é o que o Google espera em offers.
         offers: {
           "@type": "Offer",
           url: `${SITE.url}/#modelos-caixas`,
           priceCurrency: "BRL",
+          price: BOX_PRICES[box.name as keyof typeof BOX_PRICES],
           availability: "https://schema.org/PreOrder",
           itemCondition: "https://schema.org/NewCondition",
           seller: { "@id": `${SITE.url}/#organizacao` },

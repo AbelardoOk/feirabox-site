@@ -1,14 +1,21 @@
 import Image from "next/image";
+import { BOX_PRICES } from "@/lib/site";
 import { ConsumerCtaButton } from "./ctas";
 import { IMAGES } from "./images";
 import { MaterialIcon } from "./MaterialIcon";
 
 /**
- * Detalhes comerciais da caixa — Fase 3.
- * Sem dados reais: todos exibem "Valores divulgados no lançamento".
+ * Detalhes comerciais da caixa.
+ * Preço: estimado (placeholder autorizado) — confirmar no lançamento.
+ * Porções, frequência e área: "Valores divulgados no lançamento".
  */
-/* TODO: dados reais — preço, porções, frequência e área de entrega de cada caixa */
+/* TODO: dados reais — confirmar preço, porções, frequência e área de entrega de cada caixa */
 const PENDING_VALUE = "Valores divulgados no lançamento";
+
+/** "44.90" → "R$ 44,90" */
+function formatPrice(value: string): string {
+  return `R$ ${value.replace(".", ",")}`;
+}
 
 type Box = {
   category: string;
@@ -86,7 +93,6 @@ const BOXES: Box[] = [
 ];
 
 const DETAIL_ROWS = [
-  { icon: "payments", label: "Preço" },
   { icon: "group", label: "Serve" },
   { icon: "calendar_month", label: "Frequência" },
   { icon: "local_shipping", label: "Entrega" },
@@ -136,8 +142,19 @@ function BoxCard({ box }: { box: Box }) {
             </li>
           ))}
         </ul>
-        {/* Preço, porções, frequência e área — sem dados: frase padrão */}
+        {/* Preço estimado + demais detalhes ainda pendentes */}
         <dl className="grid grid-cols-1 gap-2 rounded-2xl bg-surface-container-low p-4 sm:grid-cols-2">
+          <div className="flex items-start gap-2">
+            <MaterialIcon name="payments" className="mt-0.5 shrink-0 text-[18px] text-secondary" />
+            <div className="flex flex-col">
+              <dt className="font-label-sm text-label-sm font-bold uppercase tracking-wider text-primary">
+                Preço
+              </dt>
+              <dd className="font-body-md text-body-md font-bold text-on-surface">
+                {formatPrice(BOX_PRICES[box.title as keyof typeof BOX_PRICES])}*
+              </dd>
+            </div>
+          </div>
           {DETAIL_ROWS.map((row) => (
             <div key={row.label} className="flex items-start gap-2">
               <MaterialIcon name={row.icon} className="mt-0.5 shrink-0 text-[18px] text-secondary" />
@@ -150,6 +167,9 @@ function BoxCard({ box }: { box: Box }) {
             </div>
           ))}
         </dl>
+        <p className="font-body-md text-body-md text-on-surface-variant">
+          *Preço estimado — confirmação no lançamento.
+        </p>
       </div>
       {/* mt-auto iguala a altura dos cards: CTA sempre na base */}
       <div className="mt-auto flex flex-col gap-3 pt-2">
