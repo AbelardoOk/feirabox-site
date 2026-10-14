@@ -115,6 +115,12 @@ export function SiteFooter() {
             >
               ODS 2, 8 e 12
             </Link>
+            <Link
+              className="inline-flex min-h-[44px] items-center font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
+              href="/privacidade"
+            >
+              Política de Privacidade
+            </Link>
             <div className="mt-3 pt-2 border-t border-outline-variant/30 text-on-surface-variant font-body-md text-body-md flex flex-col gap-0.5">
               <span className="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">
                 Contato Oficial • Campo Grande / MS

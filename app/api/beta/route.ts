@@ -1,52 +1,66 @@
 import { NextResponse } from "next/server";
+import { prisma } from "@/lib/db";
+import { isValidWhatsapp, normalizeWhatsapp } from "@/lib/waitlist";
 
-// Rota dinâmica: não coletar/pré-renderizar no build (Fase 5 fará a revisão completa do form/LGPD).
+// Rota dinâmica: lista de espera (POST).
 export const dynamic = "force-dynamic";
+
+type BetaBody = {
+  whatsapp?: unknown;
+  consentLgpd?: unknown;
+  /** Honeypot anti-spam: bots preenchem, humanos nunca veem. */
+  siteUrl?: unknown;
+};
 
 export async function POST(request: Request) {
   try {
-    const { contato } = await request.json();
-
-    if (!contato) {
-      return NextResponse.json({ error: "O campo de contato é obrigatório." }, { status: 400 });
+    const body = (await request.json().catch(() => null)) as BetaBody | null;
+    if (!body) {
+      return NextResponse.json(
+        { error: "Requisição inválida. Tente de novo em instantes." },
+        { status: 400 },
+      );
     }
 
-    // Validar e-mail / telefone (filtrar)
+    // Honeypot: finge sucesso sem salvar nada.
+    if (typeof body.siteUrl === "string" && body.siteUrl.trim().length > 0) {
+      return NextResponse.json({ message: "Você está na lista de espera!" }, { status: 201 });
+    }
 
-    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-    const telefoneRegex = /^[0-9\-\+\s()]{10,15}$/;
+    if (body.consentLgpd !== true) {
+      return NextResponse.json(
+        { error: "Para entrar na lista, aceite o contato pelo WhatsApp (LGPD)." },
+        { status: 400 },
+      );
+    }
 
-    const isEmail = emailRegex.test(contato);
-    const isTelefone = telefoneRegex.test(contato);
+    const digits = normalizeWhatsapp(typeof body.whatsapp === "string" ? body.whatsapp : "");
+    if (!isValidWhatsapp(digits)) {
+      return NextResponse.json(
+        { error: "Digite um WhatsApp válido com DDD + 9 dígitos. Ex.: (67) 99999-9999." },
+        { status: 400 },
+      );
+    }
 
-    if (isEmail) {
-      console.log("Processando fluxo email");
-
-      // 1. Salvar e-mail no banco (import lazy para não quebrar o build sem client gerado)
-      // TODO: dado real — Fase 5: validar geração do Prisma (`prisma generate`), salvar também telefone, honeypot e LGPD
-      const prismaModule = (await import("@prisma/client")) as unknown as {
-        PrismaClient: new () => { contato: { create: (args: unknown) => Promise<unknown> } };
-      };
-      const prisma = new prismaModule.PrismaClient();
-      await prisma.contato.create({
-        data: {
-          contato: contato,
-        },
+    try {
+      await prisma.contato.upsert({
+        where: { whatsapp: digits },
+        update: { consentLgpd: true, consentAt: new Date() },
+        create: { contato: digits, whatsapp: digits, consentLgpd: true, consentAt: new Date() },
       });
-
-      // 2. Disparar e-mail via serviço (Nodemailer, Resend, etc.)
-    } else if (isTelefone) {
-      console.log("Processando fluxo Telefone...");
-
-      // 1. Salvar telefone no banco
-      // 2. Disparar SMS / WhatsApp (Twilio, Z-API, etc.)
-    } else {
-      return NextResponse.json({ error: "Formato inválido. Envie um e-mail ou telefone válido." }, { status: 400 });
+    } catch {
+      return NextResponse.json(
+        { error: "Não foi possível salvar agora. Tente de novo em instantes." },
+        { status: 503 },
+      );
     }
 
-    // Depois de testar remover os dados da resposta
-    return NextResponse.json({ message: "Dados salvos com sucesso!", data: contato }, { status: 201 });
-  } catch (e) {
-    return NextResponse.json({ error: "Falha ao processar requisição" }, { status: 500 });
+    // Sem eco de dados pessoais na resposta.
+    return NextResponse.json({ message: "Você está na lista de espera!" }, { status: 201 });
+  } catch {
+    return NextResponse.json(
+      { error: "Falha ao processar. Tente de novo em instantes." },
+      { status: 500 },
+    );
   }
 }

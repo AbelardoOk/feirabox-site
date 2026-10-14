@@ -13,7 +13,10 @@ datasource db {
 }
 
 model Contato {
-  id        String   @id @default(uuid())
-  contato   String
-  createdAt DateTime @default(now())
+  id          String   @id @default(uuid())
+  contato     String
+  whatsapp    String?  @unique
+  consentLgpd Boolean  @default(false)
+  consentAt   DateTime?
+  createdAt   DateTime @default(now())
 }
