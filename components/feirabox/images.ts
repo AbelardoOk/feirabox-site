@@ -3,6 +3,14 @@ export const IMAGES = {
   logoFooter: "/icon.png",
   heroBox2: "/artisan.png",
   croche: "/croche.png",
+  /* TODO: dado real — substituir os placeholders abaixo por capturas/GIF/vídeo reais do app */
+  mockups: {
+    hero: "/images/mockups/tela-hero.png",
+    step1: "/images/mockups/tela-1.png",
+    step2: "/images/mockups/tela-2.png",
+    step3: "/images/mockups/tela-3.png",
+    step4: "/images/mockups/tela-4.png",
+  },
   heroBox:
     "https://lh3.googleusercontent.com/aida/AEtjO1Xe6hgjTPDJsCJXB_j2MF7HZ-N9GxXMko_XM43llUYmXWwqCpnDQNKp6gQf8hP2IKtovLLppmGK64qJQ6JCaw-qzjqetT8LxonBcbNNhOxVkRX2lADKVfwOwAbg4fQ41r8p3lC04ElidMdvbpQXrewzymertCHcLpsBa39iEUuYiZ8VskuKon8epWWl8vm6NKcoxOm7EfwE0W8_rk2nYt4ve62HQ1UIPVDIdYFY9ZREBrWg3jkOo8oVMw",
   boxDocuras:

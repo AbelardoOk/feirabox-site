@@ -1,4 +1,6 @@
+import { IMAGES } from "./images";
 import { MaterialIcon } from "./MaterialIcon";
+import { PhoneMockup } from "./PhoneMockup";
 
 const STEPS = [
   {
@@ -8,6 +10,9 @@ const STEPS = [
       "Navegue pelas caixas sazonais da semana (Artesanato, Doçuras ou Queijaria) e personalize sua frequência.",
     icon: "phone_iphone",
     tag: "100% no app",
+    /* TODO: dado real — trocar por captura/GIF/vídeo real da tela 1 */
+    mockupSrc: IMAGES.mockups.step1,
+    mockupAlt: "Prévia ilustrativa da tela 1 do app FeiraBox: escolha da caixa da semana",
   },
   {
     number: "02",
@@ -16,6 +21,9 @@ const STEPS = [
       "Os feirantes cadastrados preparam as caixas artesanais com respeito.",
     icon: "eco",
     tag: "Direto do produtor",
+    /* TODO: dado real — trocar por captura/GIF/vídeo real da tela 2 */
+    mockupSrc: IMAGES.mockups.step2,
+    mockupAlt: "Prévia ilustrativa da tela 2 do app FeiraBox: montagem da caixa pelo feirante",
   },
   {
     number: "03",
@@ -24,6 +32,9 @@ const STEPS = [
       "Acompanhe pelo app o status da entrega na sua casa ou selecione retirada sustentável na feira.",
     icon: "pin_drop",
     tag: "Rastreio no celular",
+    /* TODO: dado real — trocar por captura/GIF/vídeo real da tela 3 */
+    mockupSrc: IMAGES.mockups.step3,
+    mockupAlt: "Prévia ilustrativa da tela 3 do app FeiraBox: acompanhamento da entrega ou retirada",
   },
   {
     number: "04",
@@ -32,6 +43,9 @@ const STEPS = [
       "Receba produtos artesanais e feitos com humanidade de quem vive da feira.",
     icon: "auto_stories",
     tag: "Conteúdo exclusivo",
+    /* TODO: dado real — trocar por captura/GIF/vídeo real da tela 4 */
+    mockupSrc: IMAGES.mockups.step4,
+    mockupAlt: "Prévia ilustrativa da tela 4 do app FeiraBox: histórias dos produtores e receitas regionais",
   },
 ];
 
@@ -58,11 +72,12 @@ export function HowItWorks() {
           {STEPS.map((step) => (
             <div
               key={step.number}
-              className="p-6 rounded-3xl bg-surface-container flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow relative"
+              className="p-6 rounded-3xl bg-surface-container flex flex-col items-center text-center gap-4 shadow-sm hover:shadow-md transition-shadow relative"
             >
               <div className="w-12 h-12 rounded-2xl bg-surface-container-lowest text-primary flex items-center justify-center font-bold text-headline-sm shadow-sm">
                 {step.number}
               </div>
+              <PhoneMockup src={step.mockupSrc} alt={step.mockupAlt} />
               <div className="flex flex-col gap-2">
                 <h3 className="font-title-lg text-title-lg text-primary">
                   {step.title}
@@ -78,6 +93,9 @@ export function HowItWorks() {
             </div>
           ))}
         </div>
+        <p className="text-center text-xs text-on-surface-variant/80">
+          Telas ilustrativas — o visual final do app pode mudar até o lançamento.
+        </p>
       </div>
     </section>
   );

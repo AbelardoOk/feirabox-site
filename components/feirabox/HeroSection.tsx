@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ConsumerCtaButton, SecondaryCtaLink } from "./ctas";
 import { IMAGES } from "./images";
 import { MaterialIcon } from "./MaterialIcon";
+import { PhoneMockup } from "./PhoneMockup";
 
 /**
  * Selos "Em breve" — propositalmente SEM link.
@@ -83,6 +84,19 @@ export function HeroSection() {
         </div>
 
         <div className="relative mt-space-md lg:col-span-6 lg:mt-0">
+          {/* TODO: dado real — trocar tela-hero.png por captura/GIF/vídeo real do app */}
+          {/* Desktop: celular flutuando sobre a foto, inclinado */}
+          <div className="absolute -top-8 left-6 z-10 hidden rotate-[-6deg] lg:block">
+            <PhoneMockup
+              src={IMAGES.mockups.hero}
+              alt="Prévia ilustrativa do app FeiraBox: início e caixas da semana"
+              priority
+              widthClassName="w-[190px]"
+            />
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-secondary px-3 py-1 font-label-sm text-label-sm font-bold text-on-secondary shadow-md">
+              Prévia do app
+            </span>
+          </div>
           <div className="relative w-full overflow-hidden rounded-3xl bg-surface-container shadow-[0_8px_28px_rgba(107,112,92,0.16)]">
             <Image
               alt="Caixa rústica FeiraBox com hortifrúti orgânicos, queijo artesanal pantaneiro e mel silvestre em Campo Grande MS"
@@ -117,6 +131,18 @@ export function HeroSection() {
                 Exclusivo no App
               </span>
             </div>
+          </div>
+          {/* Mobile/tablet: prévia empilhada abaixo da foto (no desktop ela flutua sobre a foto) */}
+          <div className="mt-6 flex items-center justify-center gap-4 sm:justify-start lg:hidden">
+            <PhoneMockup
+              src={IMAGES.mockups.hero}
+              alt="Prévia ilustrativa do app FeiraBox: início e caixas da semana"
+              priority
+            />
+            <p className="max-w-[220px] text-left text-sm text-on-surface-variant">
+              Prévia do app — telas ilustrativas, o visual final pode mudar até
+              o lançamento.
+            </p>
           </div>
         </div>
       </div>
