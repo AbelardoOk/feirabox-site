@@ -1,8 +1,8 @@
 export const IMAGES = {
   logoHeader: "/icon.png",
   logoFooter: "/icon.png",
-  heroBox2: "/artisan.png",
-  croche: "/croche.png",
+  heroBox2: "/artisan.webp",
+  croche: "/croche.webp",
   /* TODO: dado real — substituir os placeholders abaixo por capturas/GIF/vídeo reais do app */
   mockups: {
     hero: "/images/mockups/tela-hero.png",

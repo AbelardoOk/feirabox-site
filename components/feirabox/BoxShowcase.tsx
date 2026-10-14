@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import { CONSUMER_CTA } from "./ctas";
+import { ConsumerCtaButton } from "./ctas";
 import { IMAGES } from "./images";
 import { MaterialIcon } from "./MaterialIcon";
 
@@ -162,13 +161,7 @@ function BoxCard({ box }: { box: Box }) {
             {box.availabilityText}
           </span>
         </div>
-        <Link
-          className="min-h-[44px] w-full rounded-2xl bg-surface-container hover:bg-surface-container-high text-primary font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all"
-          href={CONSUMER_CTA.href}
-        >
-          <MaterialIcon name="mark_email_read" className="text-[18px]" />
-          <span>{CONSUMER_CTA.label}</span>
-        </Link>
+        <ConsumerCtaButton variant="card" trackParams={{ origem: "caixas" }} />
       </div>
     </div>
   );

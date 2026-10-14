@@ -3,7 +3,7 @@ import { SiteFooter } from "@/components/feirabox/SiteFooter";
 import { SiteHeader, TopBanner } from "@/components/feirabox/Header";
 import { Testimonials } from "@/components/feirabox/Testimonials";
 import { FarmerCtaButton } from "@/components/feirabox/ctas";
-import { farmerContactHref } from "@/components/feirabox/ctas";
+import { farmerContactHref } from "@/components/feirabox/cta-constants";
 import { IMAGES } from "@/components/feirabox/images";
 import type { Metadata } from "next";
 import Link from "next/link";

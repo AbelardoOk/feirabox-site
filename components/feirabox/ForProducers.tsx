@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FARMER_CTA, FarmerCtaButton } from "./ctas";
+import { FARMER_CTA } from "./cta-constants";
+import { FarmerCtaButton } from "./ctas";
 import { IMAGES } from "./images";
 import { MaterialIcon } from "./MaterialIcon";
 

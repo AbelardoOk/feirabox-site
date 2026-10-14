@@ -16,13 +16,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
-    {
-      url: `${SITE.url}/privacidade`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.3,
-    },
   ];
+
+  // Nota: /privacidade e /termos são rascunhos com noindex — fora do sitemap até publicação.
 
   for (const section of SITE.sections) {
     pages.push({

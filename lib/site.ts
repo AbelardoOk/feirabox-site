@@ -29,7 +29,7 @@ export const SITE = {
     place: "Cidade Universitária UFMS",
   },
   ogImage: {
-    url: "https://lh3.googleusercontent.com/aida/AEtjO1Xe6hgjTPDJsCJXB_j2MF7HZ-N9GxXMko_XM43llUYmXWwqCpnDQNKp6gQf8hP2IKtovLLppmGK64qJQ6JCaw-qzjqetT8LxonBcbNNhOxVkRX2lADKVfwOwAbg4fQ41r8p3lC04ElidMdvbpQXrewzymertCHcLpsBa39iEUuYiZ8VskuKon8epWWl8vm6NKcoxOm7EfwE0W8_rk2nYt4ve62HQ1UIPVDIdYFY9ZREBrWg3jkOo8oVMw",
+    url: "/og.jpg",
     width: 1200,
     height: 630,
     alt: "Caixa rústica FeiraBox com hortifrúti orgânicos, queijo artesanal e mel silvestre do Pantanal",

@@ -121,6 +121,12 @@ export function SiteFooter() {
             >
               Política de Privacidade
             </Link>
+            <Link
+              className="inline-flex min-h-[44px] items-center font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
+              href="/termos"
+            >
+              Termos de Uso
+            </Link>
             <div className="mt-3 pt-2 border-t border-outline-variant/30 text-on-surface-variant font-body-md text-body-md flex flex-col gap-0.5">
               <span className="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">
                 Contato Oficial • Campo Grande / MS
@@ -128,6 +134,10 @@ export function SiteFooter() {
               <span className="font-body-md text-body-md">Cidade Universitária UFMS</span>
               <span className="font-body-md text-body-md text-primary font-medium">
                 contato@feirabox.ufms.br
+              </span>
+              {/* TODO: dado real — links das redes sociais (não inventar URLs); publicar no lançamento */}
+              <span className="pt-1 font-body-md text-body-md">
+                Redes sociais: divulgadas no lançamento.
               </span>
             </div>
           </div>

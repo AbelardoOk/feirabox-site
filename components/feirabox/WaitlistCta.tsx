@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { FARMER_CTA } from "./ctas";
+import { trackEvent } from "@/lib/analytics";
+import { FARMER_CTA } from "./cta-constants";
 import { MaterialIcon } from "./MaterialIcon";
 import { isValidWhatsapp, maskWhatsapp, normalizeWhatsapp } from "@/lib/waitlist";
 
@@ -54,9 +55,11 @@ export function WaitlistCta() {
       }
       setSavedNumber(maskWhatsapp(digits));
       setStatus("success");
+      trackEvent("waitlist_submit_success");
     } catch (err) {
       setErrorMsg(err instanceof Error ? err.message : "Falha ao enviar. Tente de novo em instantes.");
       setStatus("error");
+      trackEvent("waitlist_submit_error");
     }
   }
 

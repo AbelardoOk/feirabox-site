@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { MaterialIcon } from "./MaterialIcon";
 import { FAQ_DATA } from "@/lib/site";
 
@@ -109,7 +110,10 @@ export function Faq() {
                     id={buttonId}
                     aria-expanded={isOpen}
                     aria-controls={panelId}
-                    onClick={() => setOpenIndex(isOpen ? null : index)}
+                    onClick={() => {
+                      if (!isOpen) trackEvent("faq_open", { pergunta: item.question });
+                      setOpenIndex(isOpen ? null : index);
+                    }}
                     className="flex min-h-[44px] w-full items-start gap-3 rounded-2xl p-6 text-left"
                   >
                     <span

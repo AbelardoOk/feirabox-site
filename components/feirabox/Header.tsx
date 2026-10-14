@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CONSUMER_CTA } from "./ctas";
-import { MaterialIcon } from "./MaterialIcon";
+import { ConsumerCtaButton } from "./ctas";
 
 export function TopBanner() {
   return (
@@ -68,13 +67,11 @@ export function SiteHeader({ logoSrc }: { logoSrc: string }) {
         </nav>
         <div className="flex items-center gap-3">
           {/* Header com ação única: só o CTA do consumidor (Fase 1) */}
-          <Link
-            className="min-h-[44px] inline-flex items-center justify-center px-5 py-3 rounded-2xl bg-secondary text-on-secondary font-label-lg text-label-lg shadow-sm hover:bg-secondary/90 transition-all active:scale-[0.8] gap-2 shrink-0"
-            href={CONSUMER_CTA.href}
-          >
-            <MaterialIcon name="notifications_active" className="text-[18px]" />
-            <span>{CONSUMER_CTA.label}</span>
-          </Link>
+          <ConsumerCtaButton
+            variant="header"
+            icon="notifications_active"
+            trackParams={{ origem: "header" }}
+          />
         </div>
       </div>
     </header>
