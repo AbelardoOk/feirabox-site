@@ -33,6 +33,21 @@ export function SiteFooter() {
                 Feirantes do MS
               </span>
             </div>
+            {/* Microlinks movidos do hero (Fase 1): confiança, sem ação */}
+            <ul aria-label="Compromissos FeiraBox" className="flex flex-col gap-1.5 pt-1 text-sm text-on-surface-variant">
+              <li className="inline-flex items-center gap-1.5">
+                <MaterialIcon name="verified" className="text-[18px] text-primary" />
+                <span>Iniciativa com o Mercado Escola UFMS</span>
+              </li>
+              <li className="inline-flex items-center gap-1.5">
+                <MaterialIcon name="eco" className="text-[18px] text-primary" />
+                <span>Agricultura familiar de Campo Grande</span>
+              </li>
+              <li className="inline-flex items-center gap-1.5">
+                <MaterialIcon name="touch_app" className="text-[18px] text-primary" />
+                <span>Gestão e pedidos 100% no app</span>
+              </li>
+            </ul>
           </div>
           <div className="lg:col-span-2 lg:col-start-6 flex flex-col gap-2">
             <span className="font-title-lg text-title-lg text-primary mb-1 font-bold">
@@ -54,7 +69,7 @@ export function SiteFooter() {
               className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors py-0.5"
               href="#avise-me"
             >
-              Lista de Espera App
+              Entrar na lista de espera
             </a>
             <span className="text-xs text-on-surface-variant/70 italic mt-2">
               Em breve na App Store e Play Store

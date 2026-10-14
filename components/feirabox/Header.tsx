@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CONSUMER_CTA } from "./ctas";
 import { MaterialIcon } from "./MaterialIcon";
 
 export function TopBanner() {
@@ -64,16 +65,13 @@ export function SiteHeader({ logoSrc }: { logoSrc: string }) {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <div className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">
-            <MaterialIcon name="smartphone" className="text-[15px]" />
-            <span>App em Breve</span>
-          </div>
+          {/* Header com ação única: só o CTA do consumidor (Fase 1) */}
           <a
-            className="h-touch-target-min inline-flex items-center justify-center px-5 rounded-2xl bg-secondary text-on-secondary font-label-lg text-label-lg shadow-sm hover:bg-secondary/90 transition-all active:scale-[0.8] gap-2 shrink-0"
-            href="#avise-me"
+            className="min-h-[44px] inline-flex items-center justify-center px-5 py-3 rounded-2xl bg-secondary text-on-secondary font-label-lg text-label-lg shadow-sm hover:bg-secondary/90 transition-all active:scale-[0.8] gap-2 shrink-0"
+            href={CONSUMER_CTA.href}
           >
             <MaterialIcon name="notifications_active" className="text-[18px]" />
-            <span>Entrar na Lista de Espera</span>
+            <span>{CONSUMER_CTA.label}</span>
           </a>
         </div>
       </div>

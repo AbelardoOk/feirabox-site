@@ -8,6 +8,7 @@ import { HowItWorks } from "@/components/feirabox/HowItWorks";
 import { ImpactStats } from "@/components/feirabox/ImpactStats";
 import { Partners } from "@/components/feirabox/Partners";
 import { SiteFooter } from "@/components/feirabox/SiteFooter";
+import { StickyMobileCta } from "@/components/feirabox/StickyMobileCta";
 import { UfmsImpact } from "@/components/feirabox/UfmsImpact";
 import { WaitlistCta } from "@/components/feirabox/WaitlistCta";
 import { IMAGES } from "@/components/feirabox/images";
@@ -39,6 +40,9 @@ export default function Home() {
         </div>
       </main>
       <SiteFooter />
+      {/* Espaço para o CTA fixo mobile não cobrir o rodapé */}
+      <div aria-hidden="true" className="h-20 md:hidden" />
+      <StickyMobileCta />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd()) }} />
       <script
         type="application/ld+json"

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FARMER_CTA } from "./ctas";
 import { IMAGES } from "./images";
 import { MaterialIcon } from "./MaterialIcon";
 
@@ -79,11 +80,12 @@ export function ForProducers() {
               </span>
             </div>
             <div className="pt-2">
+              {/* CTA do feirante: visual outline + destino próprio (não vai ao #avise-me) */}
               <a
-                className="h-touch-target-min px-8 rounded-2xl bg-secondary text-on-secondary font-label-lg text-label-lg inline-flex items-center justify-center gap-3 shadow-md hover:bg-secondary/90 transition-all active:scale-[0.98]"
-                href="#avise-me"
+                className="min-h-[44px] px-8 py-3 rounded-2xl border-2 border-secondary bg-transparent text-secondary font-label-lg text-label-lg inline-flex items-center justify-center gap-3 shadow-sm hover:bg-secondary hover:text-on-secondary transition-all active:scale-[0.98]"
+                href={FARMER_CTA.href}
               >
-                <span>Pré-Cadastrar Banca no Projeto</span>
+                <span>{FARMER_CTA.label}</span>
                 <MaterialIcon name="how_to_reg" className="text-[20px]" />
               </a>
             </div>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CONSUMER_CTA } from "./ctas";
 import { IMAGES } from "./images";
 import { MaterialIcon } from "./MaterialIcon";
 
@@ -95,10 +96,10 @@ export function BoxShowcase() {
               </div>
               <a
                 className="h-touch-target-min w-full rounded-2xl bg-surface-container hover:bg-surface-container-high text-primary font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all"
-                href="#avise-me"
+                href={CONSUMER_CTA.href}
               >
-                <MaterialIcon name="notifications" className="text-[18px]" />
-                <span>Avisar-me no Lançamento</span>
+                <MaterialIcon name="mark_email_read" className="text-[18px]" />
+                <span>Entrar na lista de espera</span>
               </a>
             </div>
           </div>
@@ -170,13 +171,13 @@ export function BoxShowcase() {
               </div>
               <a
                 className="h-touch-target-min w-full rounded-2xl bg-secondary hover:bg-secondary/90 text-on-secondary font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
-                href="#avise-me"
+                href={CONSUMER_CTA.href}
               >
                 <MaterialIcon
-                  name="notifications_active"
+                  name="mark_email_read"
                   className="text-[18px]"
                 />
-                <span>Avisar-me no Lançamento</span>
+                <span>Entrar na lista de espera</span>
               </a>
             </div>
           </div>
@@ -248,10 +249,10 @@ export function BoxShowcase() {
               </div>
               <a
                 className="h-touch-target-min w-full rounded-2xl bg-surface-container hover:bg-surface-container-high text-primary font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all"
-                href="#avise-me"
+                href={CONSUMER_CTA.href}
               >
-                <MaterialIcon name="notifications" className="text-[18px]" />
-                <span>Avisar-me no Lançamento</span>
+                <MaterialIcon name="mark_email_read" className="text-[18px]" />
+                <span>Entrar na lista de espera</span>
               </a>
             </div>
           </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FARMER_CTA } from "./ctas";
 import { MaterialIcon } from "./MaterialIcon";
 
 export function WaitlistCta() {
@@ -87,10 +88,10 @@ export function WaitlistCta() {
           * Não realizamos vendas ou cobranças por este site. Todas as compras e assinaturas serão ativadas com
           segurança diretamente no aplicativo.
         </p>
-        <div className="flex items-center gap-2 text-surface/80 font-label-md text-label-md pt-2">
+        <div className="flex min-h-[44px] flex-wrap items-center justify-center gap-2 text-surface/80 font-label-md text-label-md pt-2">
           <span>É feirante ou pequeno produtor de MS?</span>
-          <a className="text-secondary-fixed hover:underline font-bold flex items-center gap-1" href="#feirantes">
-            <span>Participe do piloto com a equipe UFMS</span>
+          <a className="text-secondary-fixed hover:underline font-bold inline-flex min-h-[44px] items-center gap-1 px-1" href={FARMER_CTA.href}>
+            <span>{FARMER_CTA.label}</span>
             <MaterialIcon name="arrow_forward" className="text-[16px]" />
           </a>
         </div>

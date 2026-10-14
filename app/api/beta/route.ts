@@ -1,7 +1,7 @@
-import { PrismaClient } from "@prisma/client/extension";
 import { NextResponse } from "next/server";
 
-const prisma = new PrismaClient();
+// Rota dinâmica: não coletar/pré-renderizar no build (Fase 5 fará a revisão completa do form/LGPD).
+export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
   try {
@@ -22,8 +22,13 @@ export async function POST(request: Request) {
     if (isEmail) {
       console.log("Processando fluxo email");
 
-      // 1. Salvar e-mail no banco
-      const novoContato = await prisma.contato.create({
+      // 1. Salvar e-mail no banco (import lazy para não quebrar o build sem client gerado)
+      // TODO: dado real — Fase 5: validar geração do Prisma (`prisma generate`), salvar também telefone, honeypot e LGPD
+      const prismaModule = (await import("@prisma/client")) as unknown as {
+        PrismaClient: new () => { contato: { create: (args: unknown) => Promise<unknown> } };
+      };
+      const prisma = new prismaModule.PrismaClient();
+      await prisma.contato.create({
         data: {
           contato: contato,
         },
