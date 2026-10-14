@@ -167,16 +167,21 @@ export function productListJsonLd() {
       name: "Caixa Artesanato",
       description:
         "Produtos feitos à mão por artesãos regionais: crochê, decoração e cultura sul-mato-grossense.",
+      image: `${SITE.url}/croche.webp`,
     },
     {
       name: "Caixa Artesanal & Doçuras",
       description:
         "Geleias de frutas nativas, mel silvestre do cerrado e pães rústicos de fermentação natural.",
+      image:
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuB-MCzF15EQQ73Mt9JcYlvNVE-DYSbhwljbTk2YgMdOHu-bDevC5aSt8QTrvFfkyX8S9sZQTBjF-K5_O0rLmGK9jSkdrhELUJQuFwytaDuZ2ftqJwOIfIriN3ftofdcLHGNMI5OAC_L6nURdfsHxvHYeglHkwL21agaN7wHds2Gq2cGp9ITlDvNQGPqgWXcWX3elxOE3WEtFz1X1I5RlFdMnK3YCmJzOJru83cFWOrwlDVwcoDISch4",
     },
     {
       name: "Caixa Pantaneira & Queijaria",
       description:
         "Queijo caipira curado, doce de leite à lenha e iguarias do Pantanal e Cerrado.",
+      image:
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuDkIf8eud0FFH5WinpjXTOx9UAj_6bcL-Lv_p1DmAM7uDHiq62tR221ZixRMpBsZ3jAY5IZeaVKddLbBale5Myg5Ol3kwSEgPC4Xch7MqHjRhB4dVYa7ySZdJNsWNjHOkM36T3EDR5OqEYYFHfUBf65tQMntAPmrktipyYt1iPfVeK-yxJDLE4ZcVewYr3ndXu9Cl7ytUMQHNQ2eD4I6yc8rZ768S8Ga3Hw6gjH6fAjdvKzUxl-djdp",
     },
   ];
   return {
@@ -191,8 +196,20 @@ export function productListJsonLd() {
         "@type": "Product",
         name: box.name,
         description: box.description,
+        image: box.image,
         brand: { "@type": "Brand", name: SITE.shortName },
         areaServed: "Campo Grande, Mato Grosso do Sul",
+        // App ainda não lançado: oferta em pré-venda, sem preço (não inventar valores).
+        // TODO: dado real — adicionar `price` (e `availability: InStock`) quando os valores
+        // forem divulgados no lançamento; é o que o Google espera em offers.
+        offers: {
+          "@type": "Offer",
+          url: `${SITE.url}/#modelos-caixas`,
+          priceCurrency: "BRL",
+          availability: "https://schema.org/PreOrder",
+          itemCondition: "https://schema.org/NewCondition",
+          seller: { "@id": `${SITE.url}/#organizacao` },
+        },
       },
     })),
   };
